@@ -50,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = 'http://localhost:3000';
+    ENV.host = 'http://super-rentals-api.herokuapp.com';
   }
 
   return ENV;
