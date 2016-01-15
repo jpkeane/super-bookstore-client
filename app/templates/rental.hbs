@@ -1,6 +1,3 @@
-{{#each model as |rental|}}
-    <h2>{{rental.title}}</h2>
-    <p>{{rental.landlord.name}}</p>
-    <p>{{rental.propertyType.name}}</p>
-    <p>{{rental.rentalState.name}}</p>
+{{#each model as |rentalUnit|}}
+  {{rental-listing rental=rentalUnit}}
 {{/each}}
