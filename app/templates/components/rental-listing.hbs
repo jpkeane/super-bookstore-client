@@ -1,23 +1,27 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">{{rental.title}}</h3>
+        <h2 class="panel-title">
+            {{rental.title}}
+            {{rental-state-label rental.rentalState.name}}
+        </h2>
     </div>
     <div class="panel-body">
-        <div class="col-md-8">
-          <p>Default Rent: {{rental.defaultRent}} {{rental.rentPaymentPeriod}}</p>
-          <p>City: {{rental.city}}</p>
-          <p>Bedrooms: {{rental.bedrooms}}</p>
-          <p>Landlord: {{rental.landlord.name}}</p>
-          <p>Property Type: {{rental.propertyType.name}}</p>
-          <p>Rental State: {{rental.rentalState.name}}</p>
+        <div class="col-md-6">
+            <div class="col-md-6">
+                <p>
+                  <span class="rental-property-type">{{rental.propertyType.name}}</span> /
+                  <span class="rental-bedrooms">{{rental.bedrooms}} bed</span>
+                </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                  <span class="rent-amount">£{{rental.defaultRent}}</span>
+                  <span class="rent-period">{{rental.rentPaymentPeriod}}</span>
+              </p>
+            </div>
         </div>
-        <div class="col-md-4">
-          {{#if isImageShowing }}
-              <button class="btn btn-danger" {{action "imageHide"}}>Hide image</button>
-              <p><img class='rental-image' src={{rental.image}} alt={{rental.type}} width="500px"></p>
-          {{else}}
-              <button class="btn btn-success" {{action "imageShow"}}>Show image</button>
-          {{/if}}
+        <div class="col-md-6">
+              <p><img class='rental-image img-thumbnail' src={{rental.image}}></p>
         </div>
     </div>
 </div>
