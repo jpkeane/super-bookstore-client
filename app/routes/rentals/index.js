@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.findAll('rental');
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
   },
+
+  model(params) {
+    return this.store.find('rental', params);
+  }
 });

@@ -1,3 +1,8 @@
 {{#each model as |rentalListing|}}
   {{rental-listing rental=rentalListing}}
 {{/each}}
+
+<div class="clearfix">
+    <a href="#" class="left btn" {{action "prevPage"}}>&lt; Prev</a>
+    <a href="#" class="right btn" {{action "nextPage"}}>Next &gt;</a>
+</div>
